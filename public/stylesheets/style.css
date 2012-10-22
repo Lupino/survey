@@ -1,0 +1,326 @@
+#survey {
+  position: absolute;
+  width: 530px;
+  left: 50%;
+  margin-left: -265px;
+  margin-top: 58px;
+}
+#survey .header {
+  font-size: 17pt;
+  font-weight: 600;
+  text-align: center;
+  margin: 20px 0 54px 0;
+}
+#survey .item {
+  margin: 5px 0 55px 0;
+}
+#survey .item .question {
+  display: list-item;
+  font-weight: 600;
+  font-size: 13pt;
+  padding: 7px 0;
+}
+#survey .item img {
+  position: absolute;
+  margin: 15px 0 0 66px;
+}
+#survey .item .anwser {
+  font-weight: normal;
+  margin-top: 6px;
+}
+#survey .item .anwser .radio {
+  position: absolute;
+  margin-top: -17px;
+  margin-left: 58px;
+}
+#survey .item .anwser .radio input {
+  margin-left: 19px;
+}
+#survey .item .anwser .radio input.r1 {
+  margin-left: 18px;
+}
+#survey .item .anwser textarea {
+  height: 133px;
+  width: 460px;
+  border: 1px solid #ccc;
+}
+#survey .item .score {
+  margin-top: 75px;
+}
+#survey .item .contact input {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 7px;
+  padding: 5px;
+}
+#survey .item .contact input[type="text"] {
+  width: 376px;
+  margin-left: 8px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  background: url(/public/images/survey1.jpg);
+  position: absolute;
+  margin-top: 4px;
+}
+#survey .submit {
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+#pop-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: none;
+}
+#pop-outer #pop-inner {
+  background: url(/public/images/pop.jpg) no-repeat;
+  display: block;
+  position: absolute;
+  width: 628px;
+  height: 134px;
+  text-align: center;
+  padding: 50px 0;
+  left: 50%;
+  margin-left: -314px;
+  top: 50%;
+  margin-top: -67px;
+}
+#pop-outer #pop-inner #pop-close {
+  position: absolute;
+  width: 57px;
+  height: 53px;
+  right: 8px;
+  top: 6px;
+}
+#pop-outer #pop-inner #pop-message {
+  position: absolute;
+  width: 613px;
+  height: 65px;
+  left: 7px;
+  top: 60px;
+  text-align: center;
+}
+#pop-outer #pop-inner #pop-message p {
+  padding: 22px 0;
+  font-size: 16pt;
+}
+#pop-outer #pop-inner #pop-message p a {
+  color: #cd1110;
+  text-decoration: none;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: .45em .825em .45em;
+  text-align: center;
+  line-height: 1em;
+  border: 1px solid transparent;
+  border-radius: .2em;
+  -moz-border-radius: .2em;
+  -webkit-border-radius: .2em;
+  -moz-transition-property: color, -moz-box-shadow, text-shadow;
+  -moz-transition-duration: .05s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-property: color, -webkit-box-shadow, text-shadow;
+  -webkit-transition-duration: .05s;
+  -webkit-transition-timing-function: ease-in-out;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+  -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+  -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover {
+  text-decoration: none;
+}
+.btn strong {
+  position: relative;
+  z-index: 2;
+  line-height: 15px;
+}
+.btn span {
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  display: block;
+  border: 1px solid;
+  opacity: 1;
+  border-radius: .3em;
+  -moz-border-radius: .3em;
+  -webkit-border-radius: .3em;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.35);
+  -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.35);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.35);
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+}
+.btn:hover span {
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.05s;
+  -moz-transition-timing-function: linear;
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 0.05s;
+  -webkit-transition-timing-function: linear;
+}
+.btn:active span {
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+.btn11,
+.btn11 span {
+  font-size: 12px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.btn13,
+.btn13 span {
+  font-size: 13px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.btn18,
+.btn18 span {
+  font-size: 18px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.btn24,
+.btn24 span {
+  font-size: 24px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+/* Red Button */
+.rbtn {
+  color: #FFF;
+  text-shadow: 0 -1px 0 #350000;
+}
+.rbtn:hover {
+  color: #fff;
+  text-shadow: 0 -1px rgba(34, 25, 25, 0.3);
+}
+.rbtn:active {
+  color: #f2f0f0;
+  text-shadow: 0 -1px rgba(34, 25, 25, 0.6);
+}
+.rbtn span {
+  border-color: #B00000;
+  background-color: #d43638;
+  background: -moz-linear-gradient(center top, #eb5367, #e04751 50%, #de404a 50%, #d43638);
+  background: -o-linear-gradient(top left, #eb5367, #e04751 50%, #de404a 50%, #d43638);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb5367), to(#d43638), color-stop(0.5, #e04751), color-stop(0.5, #de404a));
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#eb5367', endColorstr='#d43638');
+}
+.rbtn:hover span {
+  border-color: #ad0303;
+  background-color: #d63e40;
+  background: -moz-linear-gradient(center top, #ea5d6e, #e3535d 50%, #e04a54 50%, #d63e40);
+  background: -o-linear-gradient(top left, #ea5d6e, #e3535d 50%, #e04a54 50%, #d63e40);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ea5d6e), to(#d63e40), color-stop(0.5, #e3535d), color-stop(0.5, #e04a54));
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ea5d6e', endColorstr='#d63e40');
+}
+.rbtn:active span {
+  border-color: #510000;
+  background-color: #c83031;
+  background: -moz-linear-gradient(center top, #dd4b5d, #d5414b 50%, #d33d46 50%, #c83031);
+  background: -o-linear-gradient(top left, #dd4b5d, #d5414b 50%, #d33d46 50%, #c83031);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d5414b), to(#c83031), color-stop(0.5, #d5414b), color-stop(0.5, #d33d46));
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#dd4b5d', endColorstr='#c83031');
+}
+#survey-result {
+  width: 828px;
+  position: absolute;
+  left: 50%;
+  margin-left: -414px;
+}
+#survey-result #nps-benner {
+  width: 100%;
+  height: 44px;
+  background: url(/public/images/survey-nps-top-benner.jpg) repeat-x;
+}
+#survey-result #nps-benner div {
+  display: inline-block;
+  margin: 13px;
+}
+#survey-result #nps-benner div span {
+  color: #8f2323;
+}
+#survey-result #nps-benner div#nps {
+  color: #8f2323;
+}
+#survey-result #choose-button {
+  padding: 7px;
+}
+#survey-result #choose-button button {
+  padding: 3px 6px;
+  margin-right: 10px;
+  font-size: 11pt;
+  background-color: #f9f7f8;
+  border: 1px solid #bdbbbc;
+  border-radius: 3px;
+}
+#survey-result #result {
+  margin: 0 8px;
+}
+#survey-result #result table {
+  border-top: 1px solid #a5a7a6;
+  border-left: 1px solid #a5a7a6;
+}
+#survey-result #result table tr .relname {
+  width: 81px;
+}
+#survey-result #result table tr .score {
+  width: 81px;
+}
+#survey-result #result table tr .anwser {
+  text-align: left;
+  width: 360px;
+}
+#survey-result #result table tr .contact {
+  width: 112px;
+}
+#survey-result #result table tr .handle {
+  width: 131px;
+}
+#survey-result #result table tr th {
+  background: #e7e7e7;
+  border-right: 1px solid #a5a7a6;
+  border-bottom: 1px solid #a5a7a6;
+  font-size: 14px;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+#survey-result #result table tr td {
+  word-break: break-all;
+  word-wrap: break-word;
+  border-right: 1px solid #a5a7a6;
+  border-bottom: 1px solid #a5a7a6;
+  font-size: 13px;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+#survey-result #result table tr.r1 {
+  background: #fff;
+}
+#survey-result #result table tr.r2 {
+  background: #f3f6fb;
+}

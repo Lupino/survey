@@ -1,0 +1,47 @@
+extends layout
+block content
+  script(src='/public/javascripts/main.js')
+  #survey
+    .header XXX用户满意度调研
+    .item
+      .question 你有多大可能向朋友、同学、同事推荐XXX？
+      img(src='/public/images/choose.jpg', alt='')
+      .anwser.score
+        | 请选择
+        .radio
+          input.r2(name='score', type='radio', value='0')
+          input.r2(name='score', type='radio', value='1')
+          input.r1(name='score', type='radio', value='2')
+          input.r2(name='score', type='radio', value='3')
+          input.r1(name='score', type='radio', value='4')
+          input.r2(name='score', type='radio', value='5')
+          input.r1(name='score', type='radio', value='6')
+          input.r2(name='score', type='radio', value='7')
+          input.r1(name='score', type='radio', value='8')
+          input.r2(name='score', type='radio', value='9')
+          input.r1(name='score', type='radio', value='10')
+    #q3.item.hide
+      .question 你将怎么样向其他人介绍XXX？
+      .anwser
+        textarea(name='q3', rows='10', cols='30')
+    #q1.item.hide
+      .question 你给我们打这个分数的原因是什么？
+      .anwser
+        textarea(name='q1', rows='10', cols='30')
+    #q2.item.hide
+      .question 我们能做何种改进可以让你给我们的打分接近10？
+      .anwser
+        textarea(name='q2', rows='10', cols='30')
+    .item
+      .question 你是否愿意留下联系方式，方便能请您对于我们的改进方案进行反馈？
+      .anwser.phone
+        input(name='choose', type='radio', value='true')
+        | 愿意
+        input#phone.hide(name='phone', type='text', placeholder='邮箱/手机号/QQ号')
+        br
+        input(name='choose', type='radio', value='false')
+        | 不愿意
+    .submit
+      a#btn-submit.btn.rbtn(title='提交', href='#')
+        strong 提交
+        span

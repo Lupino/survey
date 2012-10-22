@@ -1,0 +1,20 @@
+extends layout
+block content
+    script(src='/public/javascripts/result.js')
+    #survey-result
+        #nps-benner
+            #total 完成调查的总数:&nbsp;
+                span 0
+            #nps 当前推荐值(NPS)=
+                span 100%
+        #choose-button
+            button.low 0-6分(
+                span 0
+                | )
+            button.mid 7-8分(
+                span 0
+                | )
+            button.high 9-10分(
+                span 0
+                | )
+        #result
