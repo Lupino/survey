@@ -5,5 +5,6 @@ survey
 
 usage:
 
+    sudo /etc/init.d/redis-server start   # 需要 redis-server;
     npm install -f
     node app.js
