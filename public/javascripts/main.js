@@ -22,13 +22,13 @@ window.addEvent('domready', function(){
             }
         });
     });
-    $$('div.phone>input[name=choose]').each(function(input){
+    $$('div.contact>input[name=choose]').each(function(input){
         input.addEvent('click', function(){
             choose = input.value;
             if(input.value=='true'){
-                $('phone').tween('display', 'inline-block');
+                $('contact').tween('display', 'inline-block');
             }else{
-                $('phone').tween('display', 'none');
+                $('contact').tween('display', 'none');
             }
         });
     });
@@ -51,11 +51,11 @@ window.addEvent('domready', function(){
             $('pop-outer').tween('display', 'block');
             return;
         }
-        var phone = null;
+        var contact = null;
         if(choose){
             if(choose=='true'){
-                phone = $('phone').value;
-                if(!phone||phone.length < 5){
+                contact = $('contact').value;
+                if(!contact||contact.length < 5){
                     $('pop-message').innerHTML='<p>请填写你的联系方式。</p>';
                     $('pop-outer').tween('display', 'block');
                     return;
@@ -73,7 +73,7 @@ window.addEvent('domready', function(){
                 score: score,
                 anwser: anwser,
                 choose: choose,
-                phone: phone
+                contact: contact
             },
             onComplete: function(response){
                 $('pop-message').innerHTML='<p>感谢你的反馈和建议，<a href="http://huaban.com">去花瓣逛逛</a></p>';
