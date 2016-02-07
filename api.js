@@ -21,12 +21,13 @@ app.get('/api/anwsers/:type', function(req, res){
 
 app.post('/api/anwsers', function(req, res){
     var anwser = req.body;
+    anwser.score = Number(anwser.score);
     survey.save_anwser(anwser, function(err, result){
         send_json_response(res, err, result);
     });
 });
 
-app.del('/api/anwsers/:id', function(req, res){
+app.delete('/api/anwsers/:id', function(req, res){
     var anwser_id = Number(req.params.id);
     survey.del_anwser(anwser_id, function(err, ok){
         send_json_response(res, err, {id: anwser_id});

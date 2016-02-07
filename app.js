@@ -7,29 +7,36 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , Survey = require('./survey')
-  , RedisStore = require('connect-redis')(express);
+  , config = require('./config')
+  , bodyParser = require('body-parser')
+  , methodOverride = require('method-override')
+  , cookieParser = require('cookie-parser')
+  , session = require('express-session')
+  , errorHandler = require('errorhandler')
+  , favicon = require('serve-favicon')
+  , RedisStore = require('connect-redis')(session);
 
 var app = express();
 
-var survey = new Survey(require('./config'));
+var survey = new Survey(config);
 
-app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
-  app.use(express.static(path.join(__dirname, '/public')));
-  app.use(express.cookieParser());
-  app.use(express.session({ secret: 'topsecret', store: new RedisStore }));
-});
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(methodOverride());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(cookieParser());
+app.use(session({
+  secret: 'topsecret',
+  resave: true,
+  saveUninitialized: true,
+  store: new RedisStore(config.redis)
+}));
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
+app.use(errorHandler());
 
 app.get('/', function(req, res){
     res.render('index', {
